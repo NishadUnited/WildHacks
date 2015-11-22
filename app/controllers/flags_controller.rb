@@ -57,6 +57,12 @@ class FlagsController < ApplicationController
     end
   end
 
+  def flagsleft
+    respond_to do |format|
+      format.json {render json: Flag.where(claimed: 0).count}
+    end
+  end
+
   def clear
     @flags = Flag.all
     @flags.each { |e| e.destroy }

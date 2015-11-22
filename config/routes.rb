@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'flags/all/clear' => 'flags#clear'
   get 'flags/:id/claimed' => 'flags#returnclaimed'
+  get 'flags/all/flagsleft' => 'flags#flagsleft'
   resources :flags
 
   resources :players
