@@ -1,5 +1,5 @@
 class FlagsController < ApplicationController
-  before_action :set_flag, only: [:show, :edit, :update, :destroy]
+  before_action :set_flag, only: [:returnclaimed, :show, :edit, :update, :destroy]
 
   # GET /flags
   # GET /flags.json
@@ -48,6 +48,12 @@ class FlagsController < ApplicationController
         format.html { render :edit }
         format.json { render json: @flag.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def returnclaimed
+    respond_to do |format|
+      format.json {render json: @flag.claimed}
     end
   end
 
