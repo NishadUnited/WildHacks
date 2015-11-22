@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   #   Braintree::ClientToken.generate
   # end
 
+
+  post "/checkout" => 'donate#checkout'
+
   get '/donate' => 'donate#view'
 
   resources :flags
