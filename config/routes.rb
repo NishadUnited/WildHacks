@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
+  get 'flags/all/clear' => 'flags#clear'
   resources :flags
 
   resources :players
-
-  resources :flags do
-    resources :players
-  end
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

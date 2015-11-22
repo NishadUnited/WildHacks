@@ -51,6 +51,14 @@ class FlagsController < ApplicationController
     end
   end
 
+  def clear
+    @flags = Flag.all
+    @flags.each { |e| e.destroy }
+    respond_to do |format|
+      format.json { render :index, status: :ok}
+    end
+  end
+
   # DELETE /flags/1
   # DELETE /flags/1.json
   def destroy
