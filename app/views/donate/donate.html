@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Donate!</title>
+</head>
+<body>
+<form action="/your/server/endpoint" method="post">
+    <div id="dropin-container"></div>
+</form>
+
+<script type="text/javascript" src="https://js.braintreegateway.com/v2/braintree.js"></script>
+<script>
+	braintree.setup("<%= @key %>", 'dropin', {
+  		container: 'dropin-container'
+	});
+</script>
+</body>
+</html>
